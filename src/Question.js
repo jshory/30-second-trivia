@@ -49,8 +49,6 @@ class Question extends Component {
         fetch('https://opentdb.com/api.php?amount=1&type=multiple')
             .then(res => res.json())
             .then((data) => {
-                console.log(data.results[0]);
-
                 this.setState({
                     question: this.decodeHtml(data.results[0].question),
                     correctAnswer: this.decodeHtml(data.results[0].correct_answer),
